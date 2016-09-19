@@ -1,11 +1,17 @@
-div {
+#container {
+	border: 1px solid blue;
 	background-color: grey;
+	width: 960px;
+	margin: 0 auto;
+
+
 
 }
 
-.firstRow, .secondRow {
-	height: 200px;
-	width: 200px;
+.grid, .firstRow, #container > div{
+	height: 60px;
+	width: 50px;
 	background-color: green;
+	border: 1px solid red;
 	display: inline-block;
 }
