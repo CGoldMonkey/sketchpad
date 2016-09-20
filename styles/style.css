@@ -1,13 +1,32 @@
 #container {
 	border: 1px solid blue;
 	background-color: grey;
-	width: 960px;
+	width: 1000px;
 	margin: 0 auto;
+
+
 
 
 
 }
 
+.grid, #container > div {
+	height: 60px;
+	width: 50px;
+	background-color: green;
+	border: 1px solid red;
+	display: inline-block;
+
+
+
+
+
+}
+
+.nextRow {
+	clear: both;
+}
+/*
 .grid, .firstRow, #container > div{
 	height: 60px;
 	width: 50px;
@@ -15,3 +34,4 @@
 	border: 1px solid red;
 	display: inline-block;
 }
+*/
