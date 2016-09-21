@@ -2,6 +2,16 @@ $(document).ready(function(){
 	//$('.firstRow').after('<div>Test</div>');
 	//$('#container').append($('div'))
 	createGrid();
+	$('#container > div').hover(function() {
+		$(this).css('background-color', 'yellow');
+
+	});
+
+//	$('#container > div').on('hover', '#container > div', function() {
+//		$(this).css('background-color','red');
+
+
+//	});
 
 
 });
