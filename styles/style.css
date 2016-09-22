@@ -17,8 +17,9 @@
 
 .grid, #container > div {
 	height: 60px;
-	width: 50px;
-	border: 1px solid red;
+	width: 60px;
+	background-color: DarkOliveGreen;
+
 
 
 	display: inline-block;
@@ -32,8 +33,9 @@ border: 1px solid red;
 
 }
 
-.changeColor {
-	background-color: purple;
+#button_wrap {
+	text-align: center;
+	margin-bottom: 10px;
 
 }
 

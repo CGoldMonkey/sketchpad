@@ -18,3 +18,6 @@ a pen would.
 and send the user a popup asking for how many squares per side to make the 
 new grid. Once entered, the new grid should be generated in the same total 
 space as before (e.g. 960px wide) and now you've got a new sketch pad. 
+	--<button> tag
+	--prompt user for the number of squares per side for new grid
+	--generate new grid in same total space, 960px wide
