@@ -1,68 +1,42 @@
 $(document).ready(function(){
-	//$('.firstRow').after('<div>Test</div>');
-	//$('#container').append($('div'))
-//	createGrid(); //create a 16x16 grid of square divs
-	createNewGrid(16);
-	//set up a hover effect so the square changes color when passed over
-	$('#container > div').hover(function() {
-		$(this).css('background-color', 'yellow');
+	createNewGrid(16); //create a 16x16 grid of square divs
+	var $divInContainer = $('#container > div'); //store the div in the container
 
+	//set up a hover effect so the square changes color to yellow when passed over
+	$divInContainer.hover(function() {
+		$(this).css('background-color', 'yellow');
 	});
 
-//	$('#container > div').on('hover', '#container > div', function() {
-//		$(this).css('background-color','red');
-//	});
-
-	//prompt for the number of sides when the buton is clicked
+	//If the button is clicked clear the grid and prompt for the number of sides
 	$('button').on('click', function(){
-//		$('#container').find('div').empty();
-//		$('#container').empty();
-//		$('#container > div').css('background-color', 'white');
 		$('#container').find('div').remove();
 
-
-//		createNewGrid(17);
-//		var divLength = 960/17;
-//		$('#container').find('div').css({'width': divLength, 'height': divLength});
-
-//		$('#container').css('background-color', 'red');
 		var input = prompt('How many sides should the new grid have?');
-		var numSides = parseInt(input);
-//		prompt(numSides);
-		createNewGrid(numSides);
-		var divLength = 960/numSides;
-		$('#container').find('div').css({'width': divLength, 'height': divLength});
+		var numSides = parseInt(input); //convert it to an integer
+		var divLength = 960/numSides; //find the length the the squares of the grid should be
 
-	$('#container > div').hover(function() {
-		$(this).css('background-color', 'yellow');
+		createNewGrid(numSides); //create a new grid of the size prompted
 
+		$divInContainer = $('#container > div'); //store the new divs in the container
+		//set the width and height of the squares
+		$divInContainer.css({'width': divLength+'px', 'height': divLength+'px'});
+
+		//set up a hover effect so the square changes color to yellow when passed over
+		$divInContainer.hover(function() {
+			$(this).css('background-color', 'yellow');
+		});
 	});
-
-	});
-
-
 });
 
-//creates 16x16 square grid
-function createGrid() {
-	for(var row = 1;row < 17; row++){
-		for(var col = 1;col < 17; col++){
-			$('.grid').before('<div></div>');
-			if(col === 16){
-				$('.grid').before('<br/>');
-			}
-		}
-	}
-}
-
-//function clears current grid, prompts for # of sides for new grid,
-// and makes the new grid
+// makes a square grid (960px width and height)
+//parameter side determine lengthxwidth, so 16 would give a 16x16 square grid
 function createNewGrid(sides){
+	var $startPoint = $('.grid');
 	for(var row = 0;row < sides; row++){
-		for(var col = 0;col < sides; col++){
-			$('.grid').before('<div></div>');
-			if(col === sides-1){
-				$('.grid').before('<br/>');
+		for(var col = 0;col < sides; col++){ //write a whole row of div's
+			$startPoint.before('<div></div>');//insert the divs before the startpoint
+			if(col === sides-1){ //start on the next row
+				$startPoint.before('<br/>');
 			}
 		}
 	}

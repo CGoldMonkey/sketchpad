@@ -21,3 +21,11 @@ space as before (e.g. 960px wide) and now you've got a new sketch pad.
 	--<button> tag
 	--prompt user for the number of squares per side for new grid
 	--generate new grid in same total space, 960px wide
+
+4) Add a button to the top of the screen which will clear the current grid 
+and send the user a popup asking for how many squares per side to make the 
+new grid. Once entered, the new grid should be generated in the same total 
+space as before (e.g. 960px wide) and now you've got a new sketch pad. 
+	--Added the button on top with a wrapper so it could be centered
+	--Changed the width and height of the squares(the divs) that made up the 
+	grid to 960/(the number of sides prompted) with .css().
